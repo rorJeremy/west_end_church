@@ -8,7 +8,146 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <body class="header-style3">
+		<div class="body"> 
+		  <!-- Start Site Header -->
+		  <header class="site-header">
+		      <div class="container for-navi">
+		          <div class="site-logo">
+		            <h1>
+		                <a href="index.html">
+		                    <span class="logo-icon"><i class="fa fa-heart"></i></span>
+		                    <span class="logo-text">West End <span>Church</span></span>
+		                    <span class="logo-tagline"></span>
+		                </a>
+		            </h1>
+		            </div>
+		            <!-- Main Navigation -->
+		            <nav class="main-navigation" role="navigation">
+		                <ul class="sf-menu">
+		                		<li><a href="home.html">Home</a></li>
+		                    <li><a href="javascript:void(0)">About us</a>
+		                      <ul class="dropdown">
+		                        <li><a href="about.html">Overview</a></li>
+		                        <li><a href="new-here.html">New Here?</a></li>
+		                        <li><a href="staff.html">Our Staff</a></li>
+		                        <li><a href="donate.html">Donate now</a></li>
+		                      </ul>
+		                    </li>
+		                    <li><a href="javascript:void(0)">Media</a>
+		                      <ul class="dropdown">
+		                            <li><a href="sermons.html">Sermons</a>
+		                                <ul class="dropdown">
+		                                    <li><a href="sermons-series.html">Sermons Series</a></li>
+		                                    <li><a href="sermons-list.html">Sermons List</a></li>
+		                                    <li><a href="single-sermon.html">Single Sermon</a></li>
+		                                </ul>
+		                            </li>
+		                            <li><a href="javascript:void(0)">Gallery</a>
+		                                <ul class="dropdown">
+		                                    <li><a href="gallery-2cols-filter.html">With Filter</a>
+		                                        <ul class="dropdown">
+		                                            <li><a href="gallery-2cols-filter.html">2 Cols</a></li>
+		                                            <li><a href="gallery-3cols-filter.html">3 Cols</a></li>
+		                                            <li><a href="gallery-4cols-filter.html">4 Cols</a></li>
+		                                        </ul>
+		                                    </li>
+		                                    <li><a href="gallery-2cols-pagination.html">With Pagination</a>
+		                                        <ul class="dropdown">
+		                                            <li><a href="gallery-2cols-pagination.html">2 Cols</a></li>
+		                                            <li><a href="gallery-3cols-pagination.html">3 Cols</a></li>
+		                                            <li><a href="gallery-4cols-pagination.html">4 Cols</a></li>
+		                                        </ul>
+		                                    </li>
+		                                    <li><a href="gallery-galleria.html">Galleria Gallery</a></li>
+		                                </ul>
+		                            </li>
+		                        </ul>
+		                    </li>
+		                    <li><a href="home.html">Events</a></li>
+		                  <li><a href="contact.html">Contact</a></li>
+		                </ul>
+		            </nav>         
+		            <a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
+		      </div>
+		  </header>
+  		<!-- End Site Header -->
+    	<%= yield %>
+	    <!-- Start site footer -->
+	    <footer class="site-footer">
+	        <div class="container">
+	        <div class="site-footer-top">
+	              <div class="row">
+	                  <div class="col-md-4 widget footer_widget text_widget">
+	                        <h4>About our church</h4>
+	                        <hr class="sm">
+	                        <p>We are a mere group of friends, who gather together with a common goal, to meet the needs of the people of Downtown Dallas.</p>
+	                    </div>
+	                  <div class="col-md-4 widget footer_widget twitter_widget">
+	                      <h4>Twitter feeds</h4>
+	                        <hr class="sm">
+	                        <ul class="twitter-widget"></ul>
+	                </div>
+	                  <div class="col-md-4 widget footer_widget newsletter_widget">
+	                        <h4>News subscription</h4>
+	                        <hr class="sm">
+	                        <p>Subscribe to our newsletter in order to receive the latest new &amp; articles. We promise we won't spam your inbox!</p>
+	                        <div class="input-group">
+	                            <span class="input-group-addon">@</span>
+	                            <input type="text" class="form-control">
+	                            <span class="input-group-btn">
+	                            <button class="btn btn-primary" type="button">Go!</button>
+	                            </span>
+	                        </div>
+	                </div>
+	                </div>
+	            <!-- Quick Info -->
+	            <div class="quick-info">
+	                    <div class="row">
+	                        <div class="col-md-3 col-sm-6">
+	                            <h4><i class="fa fa-clock-o"></i> Service Times</h4>
+	                            <p>Sundays @ 11:00 am</p>
+	                        </div>
+	                        <div class="col-md-3 col-sm-6">
+	                            <a href="https://www.google.com/maps/place/915+San+Jacinto+St,+Dallas,+TX+75202/@32.781965,-96.8065507,17z/data=!3m1!4b1!4m5!3m4!1s0x864e993d60b8d799:0x83bba102a24de58f!8m2!3d32.781965!4d-96.804362" target="_blank"><h4><i class="fa fa-map-marker"></i> Our Location</h4></a>
+	                            <p><a href="https://www.google.com/maps/place/915+San+Jacinto+St,+Dallas,+TX+75202/@32.781965,-96.8065507,17z/data=!3m1!4b1!4m5!3m4!1s0x864e993d60b8d799:0x83bba102a24de58f!8m2!3d32.781965!4d-96.804362" target="_blank">915 San Jacinto St<br>Dallas, TX 75202</a></p>
+	                        </div>
+	                        <div class="col-md-3 col-sm-6">
+	                            <h4><i class="fa fa-envelope"></i> Contact Info</h4>
+	                            <p>(903)335-6329<br>dabidmiranda@gmail.com</p>
+	                        </div>
+	                        <div class="col-md-3 col-sm-6">
+	                            <h4><i class="fa fa-clock-o"></i> Socialize with us</h4>
+	                            <ul class="social-icons-colored inversed">
+	                                <li class="facebook"><a href="https://www.facebook.com/WestEndStreets/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+	                                <li class="twitter"><a href="https://twitter.com/WestEndStreets/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+	                                <li class="instagram"><a href="https://www.instagram.com/WestEndStreets/"><i class="fa fa-instagram"></i></a></li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	              </div>
+	            <div class="site-footer-bottom">
+	                <div class="row">
+	                    <div class="col-md-6 col-sm-6 copyrights-coll">
+	                  &copy; 2014 Adore Church. All Rights Reserved
+	                  </div>
+	                    <div class="col-md-6 col-sm-6 copyrights-colr">
+	                  <nav class="footer-nav" role="navigation">
+	                            <ul>
+	                                <li><a href="index.html">Home</a></li>
+	                                <li><a href="donate.html">Donate now</a></li>
+	                                <li><a href="new-here.html">New here?</a></li>
+	                                <li><a href="contact.html">Contact</a></li>
+	                              </ul>
+	                          </nav>
+	                  </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </footer>
+	    <!-- End site footer -->
+	    <a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>  
+		</div>
+	</body>
 </html>
