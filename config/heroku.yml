@@ -1,0 +1,11 @@
+production:
+  app: westend-church
+  repo: https://git.heroku.com/westend-church.git
+  config:
+    BUNDLE_WITHOUT: "development:test"
+
+staging:
+  app: westend-church-staging
+  repo: https://git.heroku.com/westend-church-staging.git
+  config: &default
+    BUNDLE_WITHOUT: "development:test"
