@@ -705,7 +705,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small
 }
 .breadcrumb > li + li:before {
   content: "\203A";
-  color:##999;
+  color: #9999;
   padding:0 8px;
 }
 .breadcrumb li:first-child{
