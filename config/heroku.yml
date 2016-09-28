@@ -6,7 +6,6 @@ production:
 
 staging:
   app: west-end-church-staging
-  # repo: https://git.heroku.com/west-end-church-staging.git
-  repo: git@heroku.personal:west-end-church-staging.git
+  repo: https://git.heroku.com/west-end-church-staging.git
   config: &default
     BUNDLE_WITHOUT: "development:test"
