@@ -40,8 +40,8 @@
 <script src="js/init.js"></script> <!-- All Scripts -->
 <script src="vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
 <script src="vendor/countdown/js/jquery.countdown.min.js"></script> <!-- Jquery Timer -->
-<script src="vendor/mediaelement/mediaelement-and-player.min.js"></script> <!-- MediaElements --> 
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="vendor/mediaelement/mediaelement-and-player.min.js"></script> <!-- MediaElements -->
+<script src=<%= ENV['GOOGLE_API_CALL'] %>></script>
 <script type="text/javascript">
 var geocoder = new google.maps.Geocoder();
 var address = "915 San Jacinto St. Dallas, Texas - 75202 USA"; //Add your address here, all on one line.
