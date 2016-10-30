@@ -1,0 +1,116 @@
+    <!-- Start Page Header -->
+    <div class="page-header parallax clearfix">
+    	<div id="contact-map"></div>
+    </div>
+    <!-- End Page Header -->
+    <!-- Breadcrumbs -->
+    <div class="lgray-bg breadcrumb-cont">
+    	<div class="container">
+          	<ol class="breadcrumb">
+            	<li><%= link_to "Home", home_path %></li>
+            	<li class="active">Contact</li>
+          	</ol>
+        </div>
+    </div>
+    <!-- Start Body Content -->
+  	<div class="main" role="main">
+    	<div id="content" class="content full">
+        	<div class="container">
+                <div class="row">
+                	<div class="col-md-4 col-sm-5">
+                    	<h2>Our Location</h2>
+                    	<hr class="sm">
+                    	<h4 class="short accent-color">Texas, Unites States</h4>
+                    	<p><a href="https://www.google.com/maps/place/915+San+Jacinto+St,+Dallas,+TX+75202/@32.781965,-96.8065507,17z/data=!3m1!4b1!4m5!3m4!1s0x864e993d60b8d799:0x83bba102a24de58f!8m2!3d32.781965!4d-96.804362" target="_blank">915 San Jacinto St<br>Dallas, TX 75202</a><br><a href="mailto:dabidmiranda@gmail.com">dabidmiranda@gmail.com</a></p>
+                   	</div>
+                    <div class="col-md-8 col-sm-7">
+											<!-- Change the width and height values to suit you best -->
+											<div class="typeform-widget" data-url="https://rorjeremy.typeform.com/to/DiMltM" data-text="West End Contact Form" style="width:100%;height:500px;"></div>
+											<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+											<div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;"><a href="https://www.typeform.com/examples/forms/contact-form-template/?utm_campaign=DiMltM&amp;utm_source=typeform.com-3994855-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-contactform&amp;utm_term=EN" style="color: #999" target="_blank">Contact form</a>powered by Typeform</div>
+                    </div>
+               	</div>
+           	</div>
+        </div>
+   	</div>
+<script src="js/jquery-2.0.0.min.js"></script> <!-- Jquery Library Call -->
+<script src="vendor/prettyphoto/js/prettyphoto.js"></script> <!-- PrettyPhoto Plugin -->
+<script src="js/helper-plugins.js"></script> <!-- Helper Plugins -->
+<script src="js/bootstrap.js"></script> <!-- UI -->
+<script src="js/init.js"></script> <!-- All Scripts -->
+<script src="vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
+<script src="vendor/countdown/js/jquery.countdown.min.js"></script> <!-- Jquery Timer -->
+<script src="vendor/mediaelement/mediaelement-and-player.min.js"></script> <!-- MediaElements --> 
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+var geocoder = new google.maps.Geocoder();
+var address = "915 San Jacinto St. Dallas, Texas - 75202 USA"; //Add your address here, all on one line.
+var latitude;
+var longitude;
+var color = "#3bafda"; //Set your tint color. Needs to be a hex value.
+
+function getGeocode() {
+	geocoder.geocode( { 'address': address}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+    		latitude = results[0].geometry.location.lat();
+			longitude = results[0].geometry.location.lng(); 
+			initGoogleMap();   
+    	} 
+	});
+}
+
+function initGoogleMap() {
+	var styles = [
+	    {
+	      stylers: [
+	        { saturation: -100 }
+	      ]
+	    }
+	];
+	
+	var options = {
+		mapTypeControlOptions: {
+			mapTypeIds: ['Styled']
+		},
+		center: new google.maps.LatLng(latitude, longitude),
+		zoom: 13,
+		scrollwheel: false,
+		navigationControl: false,
+		mapTypeControl: false,
+		zoomControl: true,
+		disableDefaultUI: true,	
+		mapTypeId: 'Styled'
+	};
+	var div = document.getElementById('contact-map');
+	var map = new google.maps.Map(div, options);
+	marker = new google.maps.Marker({
+	    map:map,
+	    draggable:false,
+	    animation: google.maps.Animation.DROP,
+	    position: new google.maps.LatLng(latitude,longitude)
+	});
+	var styledMapType = new google.maps.StyledMapType(styles, { name: 'Styled' });
+	map.mapTypes.set('Styled', styledMapType);
+	
+	var infowindow = new google.maps.InfoWindow({
+	      content: "<div class='iwContent'>"+address+"</div>"
+	});
+	google.maps.event.addListener(marker, 'click', function() {
+	    infowindow.open(map,marker);
+	  });
+	
+	
+	bounds = new google.maps.LatLngBounds(
+	  new google.maps.LatLng(-84.999999, -179.999999), 
+	  new google.maps.LatLng(84.999999, 179.999999));
+
+	rect = new google.maps.Rectangle({
+	    bounds: bounds,
+	    fillColor: color,
+	    fillOpacity: 0.2,
+	    strokeWeight: 0,
+	    map: map
+	});
+}
+google.maps.event.addDomListener(window, 'load', getGeocode);
+</script>
