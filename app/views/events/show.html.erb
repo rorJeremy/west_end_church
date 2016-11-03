@@ -3,8 +3,9 @@
 	<div class="page-header-overlay" style="background-color: #3bafda;opacity: 100;"></div>
     <div class="title-subtitle-holder">
     	<div class="title-subtitle-holder-inner">
-			<h2>06 feb, 2015</h2>
-  			<div class="header-event-time">From 11 AM to 4 PM</div>
+			<h2><%= @event.start_date.strftime("%A, %b. %d, %Y") %></h2>
+  			<div class="header-event-time">From <%= @event.start_time.strftime("%I:%M%p") %> to <%= @event.end_time.strftime("%I:%M%p") %></div>
+  			<%=  %>
     </div>
     </div>
 </div>
@@ -13,9 +14,9 @@
 <div class="lgray-bg breadcrumb-cont">
 	<div class="container">
       	<ol class="breadcrumb">
-        	<li><a href="index.html">Home</a></li>
-        	<li><a href="events.html">Events</a></li>
-        	<li class="active">Holy shift: Strategic think</li>
+        	<li><%= link_to "Home", home_path %></li>
+        	<li><%= link_to "All Events", events_path %></li>
+        	<li class="active"><%= @event.name %></li>
       	</ol>
     </div>
 </div>
@@ -26,30 +27,29 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-4">
-                    	<h2 class="event-title">Holy shift: Strategic think</h2>
-                        <span class="event-date hidden">06 feb, 2015</span>
-  						<span class="hidden">From <span class="event-time">11 AM</span> to 4 PM</span>
-                        <span class="meta-data event-location-address"><i class="fa fa-map-marker"></i> 123 Broadway, New York, NY</span>
+                    	<h2 class="event-title"><%= @event.name %></h2>
+                        <span class="event-date hidden"><%= @event.start_time.strftime("%A, %b. %d, %Y") %></span>
+  						<span class="hidden">From <span class="event-time"><%= @event.start_time.strftime("%I:%M%p") %></span> to <%= @event.end_time.strftime("%I:%M%p") %></span>
+                        <span class="meta-data event-location-address"><a href=<%= @event.directions_url %> target="_blank"><i class="fa fa-map-marker"></i><%= @event.address %>, <%= @event.city %> <%= @event.zip_code %></a></span>
                         <hr class="sm">
                         <a href="single-event.html" class="event-title hidden"></a>
                         <ul class="list-group">
-                          	<li class="list-group-item"> <span class="badge">1800.785.876</span> Call </li>
+                          	<li class="list-group-item"> <span class="badge"><%= @event.phone_number %></span> Call </li>
                           	<li class="list-group-item">
                         <ul class="action-buttons">
                             <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="icon-share"></i></a></li>
-                           	<li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger"><i class="icon-compass"></i></a></li>
-                            <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li>
+                           	<li title="Get directions" class="hidden-xs"><a href=<%= @event.directions_url %> class="cover-overlay-trigger"><i class="icon-compass"></i></a></li>
+                            <li title="Contact event manager"><a href="mailto:dabidmiranda@gmail.com" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li>
                             <li title="Contact event manager"><a href="javascript:window.print()"><i class="icon-printer"></i></a></li>
                         </ul></li>
                         </ul>
-                        <a href="#" class="btn btn-primary btn-block btn-lg  event-tickets event-register-button">Book Tickets</a>
                     </div>
                     <div class="col-md-9 col-sm-8">
                     	<div class="event-details">
                    			<img src="http://placehold.it/800x500&amp;text=IMAGE+PLACEHOLDER" alt="" class="temp-thumbnail">
                         <div class="clearfix"></div>
                         <div class="col-md-12">
-                        	<p><strong>Nulla consequat massa quis enim.</strong> Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.Aenean vulputate eleifend tellus. Nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
+                        	<p><%= @event.description %></p>
                         </div>
                     </div>
                 </div>
