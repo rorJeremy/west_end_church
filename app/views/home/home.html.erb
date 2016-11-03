@@ -61,12 +61,10 @@
                         </a>
                         <div class="upcoming-event-content">
                             <span class="label label-primary upcoming-event-label">Next coming event</span>
-                            <div id="counter" class="counter clearfix" data-date="July 13, 2015">
-                                <div class="timer-col"> <span id="days"></span> <span class="timer-type">Days</span> </div>
-                                <div class="timer-col"> <span id="hours"></span> <span class="timer-type">Hours</span> </div>
-                                <div class="timer-col"> <span id="minutes"></span> <span class="timer-type">Minutes</span> </div>
-                                <div class="timer-col"> <span id="seconds"></span> <span class="timer-type">Seconds</span> </div>
+                            <div>
+                                <div class="timer-col"> <span id="days"><%= @days_left %></span> <span class="timer-type">Days left!</span> </div>
                             </div>
+
                             <h3><a href="single-event.html" class="event-title">Youth participation</a></h3>
                             <span class="meta-data">On <span class="event-date">13 Jul, 15</span> at <span class="event-time">08:00 AM</span> at</span>
                             <span class="meta-data event-location"> <span class="event-location-address">State Route, Madison US</span></span>
