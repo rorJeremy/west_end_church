@@ -26,21 +26,10 @@
                       <div class="event-page-cal">
                           <span class="month"><%= I18n.t("date.abbr_month_names")[@today.mon] %></span>
                             <span class="year"><%= @today.year %></span>
-                            <a href="javascript:void(0)" class="actions left"><i class="fa fa-angle-left"></i></a>
-                            <a href="javascript:void(0)" class="actions right"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-9">
                         <div class="element-block events-listing">
-                            <div class="events-listing-header">
-                                <ul class="sort-source" data-sort-id="events" data-option-key="filter">
-                                    <li data-option-value="*" class="active"><a href="#">Show All</a></li>
-                                    <li data-option-value=".fests"><a href="#">Fests</a></li>
-                                    <li data-option-value=".meetings"><a href="#">Meetings</a></li>
-                                    <li data-option-value=".prayers"><a href="#">Prayers</a></li>
-                                    <li data-option-value=".celebrations"><a href="#">Celebrations</a></li>
-                                </ul>
-                            </div>
                             <ul class="events-listing-content sort-destination isotope-events" data-sort-id="events">
 
                               <% @events.each do |event| %>
