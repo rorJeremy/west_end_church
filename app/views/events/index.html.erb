@@ -63,11 +63,10 @@
                                         </div>
                                     </div>
                                     <div class="event-list-item-actions">
-                                      <a href="#" class="btn btn-default btn-transparent event-tickets event-register-button">Register</a>
                                       <ul class="action-buttons">
                                           <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="icon-share"></i></a></li>
-                                          <li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="icon-compass"></i></a></li>
-                                          <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li>
+                                          <li title="Get directions" class="hidden-xs"><a href=<%= event.directions_url %> class="cover-overlay-trigger event-direction-link" target="_blank"><i class="icon-compass"></i></a></li>
+                                          <li title="Contact event manager"><a href="mailto:dabidmiranda@gmail.com" class="event-contact-link"><i class="icon-mail"></i></a></li>
                                         </ul>
                                     </div>
                                 </li>
