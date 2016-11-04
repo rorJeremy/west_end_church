@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :image]
 
   # GET /events
   # GET /events.json
@@ -11,6 +11,10 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+  end
+
+  def image
+    send_data(@event.image, type: 'image/png', disposition: 'inline')
   end
 
   # GET /events/new

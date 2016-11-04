@@ -57,7 +57,7 @@
                 <div class="col-md-4 col-sm-5">
                     <section class="upcoming-event format-standard event-list-item event-dynamic">
                         <a href="single-event.html" class="media-box">
-                            <img src="http://placehold.it/600x295&amp;text=IMAGE+PLACEHOLDER" alt="">
+                            <%= image_tag event_image_path(@upcoming_event), alt:"Event Pic" %>
                         </a>
                         <div class="upcoming-event-content">
                             <span class="label label-primary upcoming-event-label">Next coming event</span>
