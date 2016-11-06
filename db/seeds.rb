@@ -11,3 +11,9 @@ Event.create!(name: "Test Event 2", description: "Like I said last time. THis is
 
 # west_end_church_picture_local = File.open("../Desktop/west_end_church.jpg", 'rb').read
 # Event.first.update_attributes!(image: west_end_church_picture_local)
+
+remote_event_image1 = open("https://s3.amazonaws.com/window-faith-email-pics/west_end_church_family.jpg").read
+Event.first.update_attributes!(image: remote_event_image1)
+
+remote_event_image2 = open("https://s3.amazonaws.com/window-faith-email-pics/david_with_jacket.jpg").read
+Event.last.update_attributes!(image: remote_event_image2)
