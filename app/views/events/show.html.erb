@@ -1,4 +1,60 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<!-- Start Page Header -->
+<div class="page-header parallax clearfix">
+	<div class="page-header-overlay" style="background-color: #3bafda;opacity: 100;"></div>
+    <div class="title-subtitle-holder">
+    	<div class="title-subtitle-holder-inner">
+			<h2><%= @event.start_date.strftime("%A, %b. %d, %Y") %></h2>
+  			<div class="header-event-time">From <%= @event.start_time.strftime("%I:%M%p") %> to <%= @event.end_time.strftime("%I:%M%p") %></div>
+  			<%=  %>
+    </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+	<div class="container">
+      	<ol class="breadcrumb">
+        	<li><%= link_to "Home", home_path %></li>
+        	<li><%= link_to "All Events", events_path %></li>
+        	<li class="active"><%= @event.name %></li>
+      	</ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+	<div id="content" class="content full">
+    	<div class="single-event-content event-list-item event-dynamic">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-5">
+                    	<h2 class="event-title"><%= @event.name %></h2>
+                        <span class="event-date hidden"><%= @event.start_time.strftime("%A, %b. %d, %Y") %></span>
+  						<span class="hidden">From <span class="event-time"><%= @event.start_time.strftime("%I:%M%p") %></span> to <%= @event.end_time.strftime("%I:%M%p") %></span>
+                        <span class="meta-data event-location-address"><a href=<%= @event.directions_url %> target="_blank"><i class="fa fa-map-marker"></i><%= @event.address %>, <%= @event.city %> <%= @event.zip_code %></a></span>
+                        <hr class="sm">
+                        <a href="single-event.html" class="event-title hidden"></a>
+                        <ul class="list-group">
+                          	<li class="list-group-item"> <span class="badge"><%= @event.phone_number %></span> Call </li>
+                          	<li class="list-group-item">
+                        <ul class="action-buttons">
+                            <li title="Share event"><a href="#" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="icon-share"></i></a></li>
+                           	<li title="Get directions" class="hidden-xs"><a href=<%= @event.directions_url %> class="cover-overlay-trigger"><i class="icon-compass"></i></a></li>
+                            <li title="Contact event manager"><a href="mailto:dabidmiranda@gmail.com" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li>
+                            <li title="Contact event manager"><a href="javascript:window.print()"><i class="icon-printer"></i></a></li>
+                        </ul></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 col-sm-7">
+                    	<div class="event-details">
+                        <%= image_tag event_image_path(@event), alt:"Event Pic", class: "temp-thumbnail img-responsive" %>
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                        	<p><%= @event.description %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       	</div>
+    </div>
+	</div>
+</div>
