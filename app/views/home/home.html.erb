@@ -56,9 +56,9 @@
           <div class="row">
                 <div class="col-md-4 col-sm-5">
                     <section class="upcoming-event format-standard event-list-item event-dynamic">
-                        <a href="single-event.html" class="media-box">
+                        <%= link_to event_path(@upcoming_event), class: "media-box" do %>
                             <%= image_tag event_image_path(@upcoming_event), alt:"Event Pic" %>
-                        </a>
+                        <% end %>
                         <div class="upcoming-event-content">
                             <span class="label label-primary upcoming-event-label">Next coming event</span>
                             <div>
