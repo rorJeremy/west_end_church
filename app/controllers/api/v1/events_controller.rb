@@ -1,3 +1,4 @@
+# require 'json'
 class Api::V1::EventsController < ApplicationController
  #  http_basic_authenticate_with :name => "myfinance", :password => "credit123"
 
@@ -7,27 +8,22 @@ class Api::V1::EventsController < ApplicationController
  # def fetch_user
  #    @user = User.find_by_id(params[:id])
  #  end
-
+  # skip_before_filter :verify_authenticity_token
   before_action :set_event, only: [:show, :edit, :update, :destroy, :image]
+  # respond_to :json
 
   # GET /events
   # GET /events.json
   def index
     @events = Event.all
-    respond_to do |format|
-      format.json { render json: @events }
-      format.xml { render xml: @events }
-    end
-
+    render json: @events, each_serializer: EventSerializer
+    # respond_with(@events)     
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-    respond_to do |format|
-      format.json { render json: @event }
-      format.xml { render xml: @event }
-    end  	
+    render json: @event, serializer: EventSerializer 	
   end
 
   # def image

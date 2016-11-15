@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :events
-	namespace :api do
+	namespace :api, :defaults => {:format => :json} do
 		namespace :v1 do
-	 		resources :events, :defaults => { :format => 'json' }
+	 		resources :events
 	 	end
 	end  
   get '/events/:id/image' => 'events#image', as: :event_image
